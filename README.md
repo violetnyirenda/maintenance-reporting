@@ -20,6 +20,9 @@ full-stack-final-project/
 ├── server/          # Express API
 │   ├── sql/         # PostgreSQL schema
 │   └── uploads/     # Uploaded files
+├── docs/
+│   ├── POSTGRES_SETUP.md
+│   └── postman/     # Postman collection for API testing
 └── README.md
 ```
 
@@ -93,6 +96,22 @@ With the server running:
 1. Call `POST /api/auth/login` with admin credentials.
 2. Copy the `token` from the response.
 3. Click **Authorize** in Swagger UI and enter: `Bearer YOUR_TOKEN` (or paste the token only if Swagger adds `Bearer` for you).
+
+## Testing with Postman
+
+You can test the API with [Postman](https://www.postman.com/) while the server is running on port 5000.
+
+### Import the collection
+
+1. Open Postman → **Import** → **Upload Files**.
+2. Choose [docs/postman/maintenance-reporting.postman_collection.json](docs/postman/maintenance-reporting.postman_collection.json).
+3. Open the collection variables (`baseUrl` defaults to `http://localhost:5000`).
+4. Run **Auth → Login (admin)**. The test script saves the JWT to `token` automatically.
+5. Run other requests (reports, uploads, etc.). Bearer auth is applied at collection level.
+
+Manual flow (without the collection): `POST /api/auth/login`, copy `token`, then set **Authorization → Bearer Token** on protected routes. For uploads, use **form-data** with field name `file`.
+
+Swagger UI and Postman both hit the same Express API; use whichever you prefer.
 
 ## API overview
 
