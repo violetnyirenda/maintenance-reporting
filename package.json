@@ -1,0 +1,23 @@
+{
+  "name": "full-stack-final-project",
+  "version": "1.0.0",
+  "description": "Full-stack web app for reporting and managing campus maintenance issues.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/violetnyirenda/maintenance-reporting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/violetnyirenda/maintenance-reporting/issues"
+  },
+  "homepage": "https://github.com/violetnyirenda/maintenance-reporting#readme"
+}
